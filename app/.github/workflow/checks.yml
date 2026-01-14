@@ -3,6 +3,7 @@ name: AutoCheck
 
 on: [push]
 
+
 jobs: 
   test-lint:
     name: Test and linit
