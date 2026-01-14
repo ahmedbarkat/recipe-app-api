@@ -1,5 +1,5 @@
 ---
-name: AutoCheck
+name: Checks
 
 on: [push]
 
