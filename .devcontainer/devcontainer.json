@@ -1,0 +1,10 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Django Docker Dev",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/app",
+  "extensions": [
+    "ms-python.python"
+  ]
+}

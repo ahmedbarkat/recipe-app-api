@@ -8,6 +8,8 @@ services:
         DEV: "true"
     ports:
       - "8000:8000"
+      - "5678:5678"
+
     volumes:
       - ./app:/app
     command: sh -c "python manage.py wait_for_db &&
@@ -20,6 +22,15 @@ services:
       DB_PASS: pass
     depends_on:
       - db
+
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"      # max about 50% of one core
+          memory: "2G"   # max ~512MB RAM
+        reservations:
+          cpus: "0.25"     # soft minimum CPU
+          memory: "1G"   # soft minimum RAM
 
   db:
     image: postgres:13-alpine
